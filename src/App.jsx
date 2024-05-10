@@ -44,15 +44,16 @@ const App = () => {
 
   return (
     <div>
-      {data.map((item, index) => (
-        <div key={index} className="card">
-          <img
-            src={'https://img.opencritic.com/' + item.images?.banner?.sm}
-            alt={item.name}
-          />
-          <h2>{item.name}</h2>
-        </div>
-      ))}
+      {data &&
+        data.map((item, index) => (
+          <div key={index} className="card">
+            <img
+              src={'https://img.opencritic.com/' + item.images?.banner?.sm}
+              alt={item.name}
+            />
+            <h2>{item.name}</h2>
+          </div>
+        ))}
     </div>
   );
 };
