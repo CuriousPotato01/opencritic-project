@@ -1,5 +1,8 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ReactDOM from 'react-dom/client';
+import Card from './Card';
 
 const App = () => {
   const [data, setData] = useState(null);
@@ -8,18 +11,27 @@ const App = () => {
     url: 'https://opencritic-api.p.rapidapi.com/game',
     params: {
       platforms: 'all',
-      sort: 'date',
-      order: 'asc',
-      skip: '20',
+      sort: 'score',
+      order: 'desc',
     },
     headers: {
       'X-RapidAPI-Key': 'fc131178cdmsh68f34188b659107p19aedfjsnae0ff1c52c70',
       'X-RapidAPI-Host': 'opencritic-api.p.rapidapi.com',
     },
   };
-
   const fetchData = async () => {
     try {
+      const storedOptionsString = localStorage.getItem('myOptions');
+      const storedOptions = storedOptionsString
+        ? JSON.parse(storedOptionsString)
+        : null;
+
+      // If the options have changed, clear the localStorage
+      if (JSON.stringify(storedOptions) !== JSON.stringify(options)) {
+        localStorage.removeItem('myData');
+        localStorage.removeItem('myOptions');
+      }
+
       const dataString = localStorage.getItem('myData');
 
       if (dataString) {
@@ -30,6 +42,7 @@ const App = () => {
         const response = await axios.request(options);
         const newDataString = JSON.stringify(response.data);
         localStorage.setItem('myData', newDataString);
+        localStorage.setItem('myOptions', JSON.stringify(options)); // Store the options
         setData(response.data);
         console.log(data);
       }
@@ -43,18 +56,16 @@ const App = () => {
   }, []);
 
   return (
-    <div>
-      {data &&
-        data.map((item, index) => (
-          <div key={index} className="card">
-            <img
-              src={'https://img.opencritic.com/' + item.images?.banner?.sm}
-              alt={item.name}
-            />
-            <h2>{item.name}</h2>
-          </div>
-        ))}
+    <div className="row">
+      {data && data.map((item, index) => <Card key={index} item={item} />)}
     </div>
   );
 };
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+);
+
 export default App;
