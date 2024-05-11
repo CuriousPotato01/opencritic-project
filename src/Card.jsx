@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 const Card = ({ item }) => {
   return (
-    <div className="col-3">
-      <div className="card">
+    <div className="col-3 mb-4">
+      <div className="card text-bg-dark">
         <img
           src={'https://img.opencritic.com/' + item.images?.banner?.sm}
           alt={item.name}
