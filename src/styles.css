@@ -2,7 +2,7 @@ body {
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 2%;
-  background-color: #212529;
+  --bs-body-bg: ;
 }
 
 .card {
