@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import ReactDOM from 'react-dom/client';
 import Card from './Card';
 import Pagination from './Pagination';
-import SecondPage from './SecondPage';
 import fetchData from './fetchData';
 
 const options = {
@@ -32,6 +29,9 @@ const HomePage = () => {
     getData();
   }, []);
 
+  if (data === null) {
+    return <div>Loading...</div>;
+  }
   return (
     <div>
       <div className="row">
