@@ -2,6 +2,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import fetchData from './fetchData';
+import ReviewCard from './ReviewCard';
 
 const Details = () => {
   const { id } = useParams();
@@ -49,11 +50,15 @@ const Details = () => {
     <div>
       <div className="container d-flex flex-column">
         <p className="text-center fw-bold">{data.name}</p>
-        <p>{reviewData[0].snippet}</p>
         <img
           src={'https://img.opencritic.com/' + data.images.masthead.xl}
           alt={data.name}
         />
+      </div>
+      <div className="row mt-5">
+        {reviewData.slice(0, 5).map((item, index) => (
+          <ReviewCard key={index} item={item} />
+        ))}
       </div>
     </div>
   );
