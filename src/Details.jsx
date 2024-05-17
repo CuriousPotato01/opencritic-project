@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import fetchData from './fetchData';
 import ReviewCard from './ReviewCard';
@@ -13,7 +13,7 @@ const Details = () => {
     method: 'GET',
     url: `https://opencritic-api.p.rapidapi.com/game/${id}`,
     headers: {
-      'X-RapidAPI-Key': 'fc131178cdmsh68f34188b659107p19aedfjsnae0ff1c52c70',
+      'X-RapidAPI-Key': 'eeb8c2298dmsh955eaa77e8c60c7p12d369jsnd80d2d9dcafe', //'fc131178cdmsh68f34188b659107p19aedfjsnae0ff1c52c70'
       'X-RapidAPI-Host': 'opencritic-api.p.rapidapi.com',
     },
   };
@@ -22,7 +22,7 @@ const Details = () => {
     url: `https://opencritic-api.p.rapidapi.com/reviews/game/${id}`,
     params: { sort: 'popularity' },
     headers: {
-      'X-RapidAPI-Key': 'fc131178cdmsh68f34188b659107p19aedfjsnae0ff1c52c70',
+      'X-RapidAPI-Key': 'eeb8c2298dmsh955eaa77e8c60c7p12d369jsnd80d2d9dcafe',
       'X-RapidAPI-Host': 'opencritic-api.p.rapidapi.com',
     },
   };
@@ -48,6 +48,12 @@ const Details = () => {
 
   return (
     <div>
+      <Link to="/">
+        <button type="button" className="btn btn-primary">
+          Home
+        </button>
+      </Link>
+
       <div className="container d-flex flex-column">
         <p className="text-center fw-bold">{data.name}</p>
         <img

@@ -13,7 +13,7 @@ const options = {
     skip: '40',
   },
   headers: {
-    'X-RapidAPI-Key': 'fc131178cdmsh68f34188b659107p19aedfjsnae0ff1c52c70',
+    'X-RapidAPI-Key': 'eeb8c2298dmsh955eaa77e8c60c7p12d369jsnd80d2d9dcafe',
     'X-RapidAPI-Host': 'opencritic-api.p.rapidapi.com',
   },
 };
