@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Card from './Card';
 import Pagination from './Pagination';
 import fetchData from './fetchData';
+import Navbar from './Navbar';
 
 const options = {
   method: 'GET',
@@ -34,6 +35,7 @@ const HomePage = () => {
   }
   return (
     <div>
+      <Navbar className="mb-10" />
       <div className="row">
         {data && data.map((item, index) => <Card key={index} item={item} />)}
       </div>

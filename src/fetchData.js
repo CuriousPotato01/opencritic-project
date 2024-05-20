@@ -7,6 +7,7 @@ const fetchData = async options => {
     const key = JSON.stringify(options);
     if (cache.has(key)) {
       console.log(1);
+      console.log(cache.get(key));
       return cache.get(key);
     }
     console.log(0);
@@ -15,7 +16,6 @@ const fetchData = async options => {
     cache.set(key, newData);
     localStorage.setItem('cache', JSON.stringify(Array.from(cache.entries())));
     console.log(response.data);
-    console.log(cache);
     return response.data;
   } catch (error) {
     console.error(error);

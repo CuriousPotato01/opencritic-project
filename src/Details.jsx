@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import fetchData from './fetchData';
 import ReviewCard from './ReviewCard';
+import Navbar from './Navbar';
 
 const Details = () => {
   const { id } = useParams();
@@ -48,12 +49,7 @@ const Details = () => {
 
   return (
     <div>
-      <Link to="/">
-        <button type="button" className="btn btn-primary">
-          Home
-        </button>
-      </Link>
-
+      <Navbar />
       <div className="container d-flex flex-column">
         <p className="text-center fw-bold">{data.name}</p>
         <img
