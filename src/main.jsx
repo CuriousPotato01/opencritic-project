@@ -5,20 +5,41 @@ import SecondPage from './SecondPage';
 import ThirdPage from './ThirdPage';
 import Details from './Details';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import './styles.css';
+import SortedByDate from './SortedByDate';
+import SortedByDate2 from './SortedByDate2';
+import SortedByDate3 from './SortedByDate3';
 
 const router = createBrowserRouter([
+  {
+    path: '/score',
+    element: <HomePage />,
+  },
   {
     path: '/',
     element: <HomePage />,
   },
+  {
+    path: '/date',
+    element: <SortedByDate />,
+  },
+  {
+    path: '/date/2',
+    element: <SortedByDate2 />,
+  },
+  {
+    path: '/date/3',
+    element: <SortedByDate3 />,
+  },
 
   {
-    path: '/page/2',
+    path: '/score/2',
     element: <SecondPage />,
   },
 
   {
-    path: '/page/3',
+    path: '/score/3',
     element: <ThirdPage />,
   },
 

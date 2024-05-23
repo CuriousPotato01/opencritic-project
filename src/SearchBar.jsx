@@ -6,7 +6,7 @@ function SearchBar() {
     method: 'GET',
     url: 'https://opencritic-api.p.rapidapi.com/game/search',
     params: {
-      criteria: 'the withcer 3',
+      criteria: null,
     },
     headers: {
       'x-rapidapi-key': 'eeb8c2298dmsh955eaa77e8c60c7p12d369jsnd80d2d9dcafe',

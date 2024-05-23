@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
+import SortingMenu from './SortingMenu';
 
 function Navbar() {
   return (

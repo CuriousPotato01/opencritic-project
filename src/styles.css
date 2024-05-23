@@ -6,5 +6,9 @@ body {
 }
 
 .card {
-  height: 400px !important;
+  height: 400px;
+}
+
+.dropdown-item {
+  background-color: #5c636a;
 }

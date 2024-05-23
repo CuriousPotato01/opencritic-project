@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import fetchData from './fetchData';
 import ReviewCard from './ReviewCard';
@@ -53,7 +53,7 @@ const Details = () => {
       <div className="container d-flex flex-column">
         <p className="text-center fw-bold">{data.name}</p>
         <img
-          src={'https://img.opencritic.com/' + data.images.masthead.xl}
+          src={'https://img.opencritic.com/' + data.images?.masthead?.xl}
           alt={data.name}
         />
       </div>

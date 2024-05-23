@@ -10,8 +10,9 @@ const options = {
   url: 'https://opencritic-api.p.rapidapi.com/game',
   params: {
     platforms: 'all',
-    sort: 'score',
-    order: 'desc',
+    sort: 'date',
+    order: 'asc',
+    skip: '50',
   },
   headers: {
     'X-RapidAPI-Key': 'eeb8c2298dmsh955eaa77e8c60c7p12d369jsnd80d2d9dcafe',
@@ -19,7 +20,7 @@ const options = {
   },
 };
 
-const HomePage = () => {
+const SortedByDate3 = () => {
   const [data, setData] = useState(null);
   useEffect(() => {
     const getData = async () => {
@@ -40,9 +41,9 @@ const HomePage = () => {
       <div className="row">
         {data && data.map((item, index) => <Card key={index} item={item} />)}
       </div>
-      <Pagination />
+      <Pagination sort="date" />
     </div>
   );
 };
 
-export default HomePage;
+export default SortedByDate3;
