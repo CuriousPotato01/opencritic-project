@@ -47,11 +47,18 @@ const Details = () => {
     return <div>Loading...</div>;
   }
 
+  const date = new Date(data.firstReleaseDate);
+  const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+
+  const formattedDate = date.toLocaleDateString('en-US', dateOptions);
+
   return (
     <div>
       <Navbar />
       <div className="container d-flex flex-column">
         <p className="text-center fw-bold">{data.name}</p>
+        <p>{formattedDate}</p>
+
         <img
           src={'https://img.opencritic.com/' + data.images?.masthead?.xl}
           alt={data.name}
