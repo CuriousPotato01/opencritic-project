@@ -10,6 +10,7 @@ import './styles.css';
 import SortedByDate from './SortedByDate';
 import SortedByDate2 from './SortedByDate2';
 import SortedByDate3 from './SortedByDate3';
+import SearchResultsPage from './SearchResultsPage';
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
   {
     path: '/details/:id',
     element: <Details />,
+  },
+  {
+    path: '/search/',
+    element: <SearchResultsPage />,
   },
 ]);
 

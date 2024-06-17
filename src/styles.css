@@ -12,3 +12,11 @@ body {
 .dropdown-item {
   background-color: #5c636a;
 }
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 20vh;
+  align-items: center;
+}

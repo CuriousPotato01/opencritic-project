@@ -1,5 +1,5 @@
 import fetchData from './fetchData';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function SearchBar() {
   const options = {
@@ -14,6 +14,8 @@ function SearchBar() {
     },
   };
 
+  const navigate = useNavigate();
+
   function setCriteria(string) {
     options.params.criteria = string;
   }
@@ -24,6 +26,7 @@ function SearchBar() {
         e.preventDefault();
         let data = await fetchData(options);
         console.log(data);
+        navigate('/search', { state: { data } });
       }}
       className="d-flex position-absolute top-50 start-50 translate-middle"
       role="search"
