@@ -13,39 +13,13 @@ const router = createBrowserRouter([
     element: <HomePage />,
   },
   {
-    path: '/score/1',
+    path: '/score/:pageNumber',
     element: <HomePage />,
   },
   {
-    path: '/score/2',
+    path: '/date/:pageNumber',
     element: <HomePage />,
   },
-
-  {
-    path: '/score/3',
-    element: <HomePage />,
-  },
-  {
-    path: '/score/4',
-    element: <HomePage />,
-  },
-  {
-    path: '/date/1',
-    element: <HomePage />,
-  },
-  {
-    path: '/date/2',
-    element: <HomePage />,
-  },
-  {
-    path: '/date/3',
-    element: <HomePage />,
-  },
-  {
-    path: '/date/4',
-    element: <HomePage />,
-  },
-
   {
     path: '/details/:id',
     element: <Details />,

@@ -28,7 +28,7 @@ const HomePage = () => {
       ...prevOptions,
       params: {
         ...prevOptions.params,
-        skip: (pageNumber - 1) * 20,
+        skip: (parseInt(pageNumber) - 1) * 20,
         sort: sortingMethod,
       },
     }));
