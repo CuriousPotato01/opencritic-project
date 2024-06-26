@@ -9,10 +9,6 @@ body {
   height: 400px;
 }
 
-.dropdown-item {
-  background-color: #5c636a;
-}
-
 .footer {
   display: flex;
   flex-direction: row;
