@@ -2,7 +2,7 @@
 const ReviewCard = ({ item }) => {
   return (
     <div className="col">
-      <div className="card text-bg-dark">
+      <div className="card text-bg-dark border border-secondary">
         <div className="card-header text-bg-primary">
           {item.Outlet.name}
           <img src={'https://img.opencritic.com/' + item.Outlet.imageSrc.sm} />

@@ -22,10 +22,10 @@ function Pagination({ sort, propFunction }) {
   }, [sort]);
 
   return (
-    <ul className="pagination justify-content-center">
+    <ul className="pagination justify-content-center" data-bs-theme="dark">
       {pageArray[0] !== 1 && (
         <Link className="page-link" onClick={() => updatePageArray('back')}>
-          Back
+          Previous
         </Link>
       )}
       {pageArray.map(pageNumber => (
@@ -40,7 +40,7 @@ function Pagination({ sort, propFunction }) {
         </li>
       ))}
       <Link className="page-link" onClick={() => updatePageArray('forward')}>
-        Forward
+        Next
       </Link>
     </ul>
   );

@@ -44,7 +44,7 @@ const Details = () => {
   }, []);
 
   if (!data || !reviewData) {
-    return <div>Loading...</div>;
+    return <div className="loader"></div>;
   }
 
   const date = new Date(data.firstReleaseDate);

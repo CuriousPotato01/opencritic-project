@@ -28,7 +28,7 @@ const HomePage = () => {
       ...prevOptions,
       params: {
         ...prevOptions.params,
-        skip: (parseInt(pageNumber) - 1) * 20,
+        skip: (pageNumber - 1) * 20,
         sort: sortingMethod,
       },
     }));
@@ -44,7 +44,7 @@ const HomePage = () => {
   }, [options]);
 
   if (data === null) {
-    return <div>Loading...</div>;
+    return <div className="loader"></div>;
   }
   return (
     <div>

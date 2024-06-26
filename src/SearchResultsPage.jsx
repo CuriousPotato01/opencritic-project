@@ -10,9 +10,11 @@ const SearchResultsPage = () => {
   console.log(basicData);
 
   const [dataArray, setDataArray] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchDataArray = async () => {
+      setIsLoading(true);
       const results = [];
       for (let i = 0; i < basicData.length; i++) {
         let id = basicData[i].id;
@@ -33,12 +35,17 @@ const SearchResultsPage = () => {
         results.push(data);
       }
       setDataArray(results);
+      setIsLoading(false);
     };
 
     fetchDataArray();
   }, [basicData]);
 
   console.log(dataArray);
+
+  if (isLoading) {
+    return <div className="loader"></div>;
+  }
 
   return (
     <div>

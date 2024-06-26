@@ -5,7 +5,7 @@ const Card = ({ item }) => {
   return (
     <div className="col-3 mb-4">
       <Link to={`/details/${item.id}`} className="text-decoration-none">
-        <div className="card text-bg-dark">
+        <div className="card text-bg-dark border border-secondary">
           <div>
             <img
               src={'https://img.opencritic.com/' + item.images?.banner?.og}

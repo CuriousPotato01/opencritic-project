@@ -1,16 +1,33 @@
 import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
-import SortingMenu from './SortingMenu';
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg mb-3">
-      <Link to="/">
-        <button type="button" className="btn btn-primary">
-          Home
-        </button>
-      </Link>
-      <SearchBar />
+    <nav
+      className="navbar navbar-expand-lg mb-3 navbar bg-dark border-bottom border-body"
+      data-bs-theme="dark"
+    >
+      <div className="container-fluid">
+        <Link to="/">
+          <img src="/src/logo-light.png" alt="" />
+        </Link>
+        <div className="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul className="navbar-nav">
+            <li className="nav-item"></li>
+          </ul>
+        </div>
+
+        <SearchBar />
+        <Link
+          className="nav-link active"
+          to={'https://github.com/CuriousPotato01/opencritic-project'}
+        >
+          <img
+            src="/src/github-mark-white.png"
+            style={{ width: '40px', height: '40px', objectFit: 'contain' }}
+          />
+        </Link>
+      </div>
     </nav>
   );
 }
