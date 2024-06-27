@@ -46,7 +46,6 @@ const Details = () => {
   if (!data || !reviewData) {
     return <div className="loader"></div>;
   }
-
   const date = new Date(data.firstReleaseDate);
   const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
 
