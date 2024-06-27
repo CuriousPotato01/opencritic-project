@@ -55,15 +55,23 @@ const Details = () => {
   return (
     <div>
       <Navbar />
-      <div className="container d-flex flex-column">
-        <p className="text-center fw-bold">{data.name}</p>
-        <p>{formattedDate}</p>
-
-        <img
-          src={'https://img.opencritic.com/' + data.images?.masthead?.xl}
-          alt={data.name}
-        />
+      <div className="d-flex flex-row">
+        <div>
+          <img
+            src={'https://img.opencritic.com/' + data.images?.masthead?.xl}
+            alt={data.name}
+          />
+        </div>
+        <div className="w-100 bg-secondary ms-2">
+          <p className="text-center fw-bold">{data.name}</p>
+          <p>Release Date: {formattedDate}</p>
+          <p>Developer: {data.Companies[0].name}</p>
+          <p>Critic Average: {Math.round(data.topCriticScore)}</p>
+        </div>
       </div>
+
+      <div className="">Screenshots</div>
+
       <div className="row mt-5">
         {reviewData.slice(0, 5).map((item, index) => (
           <ReviewCard key={index} item={item} />

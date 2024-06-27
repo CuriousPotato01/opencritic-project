@@ -2,6 +2,10 @@
 import { Link } from 'react-router-dom';
 
 const Card = ({ item }) => {
+  const date = new Date(item.firstReleaseDate);
+  const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+  const formattedDate = date.toLocaleDateString('en-US', dateOptions);
+
   return (
     <div className="col-3 mb-4">
       <Link to={`/details/${item.id}`} className="text-decoration-none">
@@ -17,8 +21,9 @@ const Card = ({ item }) => {
           <div className="card-body">
             <h2 className="card-title">{item.name}</h2>
             <p className="card-text">
-              Critic Score: {Math.round(item.topCriticScore)}
+              Critic Average: {Math.round(item.topCriticScore)}
             </p>
+            <p className="card-text">Release Date: {formattedDate}</p>
           </div>
         </div>
       </Link>
