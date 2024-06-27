@@ -4,7 +4,7 @@ import SearchBar from './SearchBar';
 function Navbar() {
   return (
     <nav
-      className="navbar navbar-expand-lg mb-3 navbar bg-dark border-bottom border-body"
+      className="navbar navbar-expand-lg mb-3 navbar border-bottom border-body pt-3 ps-3 pe-3"
       data-bs-theme="dark"
     >
       <div className="container-fluid">

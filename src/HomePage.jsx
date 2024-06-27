@@ -5,6 +5,7 @@ import Pagination from './Pagination';
 import fetchData from './fetchData';
 import Navbar from './Navbar';
 import SortingMenu from './SortingMenu';
+import Footer from './Footer';
 
 const HomePage = () => {
   const [data, setData] = useState(null);
@@ -48,12 +49,18 @@ const HomePage = () => {
   }
   return (
     <div>
-      <Navbar />
-      <SortingMenu propFunction={updateOptions} />
-      <div className="row">
-        {data && data.map((item, index) => <Card key={index} item={item} />)}
+      <div>
+        <Navbar />
+        <div className="ps-5 pe-5">
+          <SortingMenu propFunction={updateOptions} />
+          <div className="row">
+            {data &&
+              data.map((item, index) => <Card key={index} item={item} />)}
+          </div>
+          <Pagination propFunction={updateOptions} sort={options.params.sort} />
+        </div>
       </div>
-      <Pagination propFunction={updateOptions} sort={options.params.sort} />
+      <Footer />
     </div>
   );
 };

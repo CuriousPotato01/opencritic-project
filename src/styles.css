@@ -1,7 +1,4 @@
 body {
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-top: 2%;
   background-color: #212529;
   color: white;
 }
@@ -16,6 +13,11 @@ body {
   justify-content: center;
   height: 20vh;
   align-items: center;
+  background-color: #18181a;
+}
+
+.navbar {
+  background-color: #18181a !important;
 }
 
 .loader {
@@ -29,6 +31,10 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.card {
+  background-color: #18181a4c !important;
 }
 
 @keyframes spin {
