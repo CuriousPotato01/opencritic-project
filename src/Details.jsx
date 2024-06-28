@@ -5,6 +5,8 @@ import fetchData from './fetchData';
 import ReviewCard from './ReviewCard';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 const Details = () => {
   const { id } = useParams();
@@ -64,7 +66,7 @@ const Details = () => {
         </div>
         <div className="border ms-2 pt-2  d-flex flex-column">
           <p className="text-center fw-bold">{data.name}</p>
-          <div className="ps-2 pe-2 border-bottom">
+          <div className="ps-2 pe-2 pb-2 border-bottom d-flex flex-column justify-content-center align-items-center">
             <ul>
               <li>
                 <p>Release Date: {formattedDate}</p>
@@ -72,10 +74,36 @@ const Details = () => {
               <li>
                 <p>Developer: {data.Companies[0].name}</p>
               </li>
-              <li>
-                <p>Critic Average: {Math.round(data.topCriticScore)}</p>
-              </li>
             </ul>
+            <div
+              className=""
+              style={{
+                width: '20%',
+              }}
+            >
+              <CircularProgressbar
+                styles={buildStyles({
+                  // Rotation of path and trail, in number of turns (0-1)
+                  rotation: 0.25,
+
+                  // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+                  strokeLinecap: 'butt',
+
+                  // Text size
+                  textSize: '16px',
+
+                  // How long animation takes to go from one percentage to another, in seconds
+                  pathTransitionDuration: 0.5,
+
+                  pathColor: `rgb(252, 67, 10, ${Math.round(data.topCriticScore) / 100})`,
+                  textColor: 'white',
+                  trailColor: '#d6d6d6',
+                  backgroundColor: '#f88',
+                })}
+                value={Math.round(data.topCriticScore)}
+                text={`${Math.round(data.topCriticScore)}%`}
+              />
+            </div>
           </div>
 
           <div className="pt-2 ps-3 pe-3 overflow-auto description-container">
