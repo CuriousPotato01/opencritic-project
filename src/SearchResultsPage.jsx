@@ -3,7 +3,7 @@ import Card from './Card';
 import fetchData from './fetchData';
 import Navbar from './Navbar';
 import { useLocation } from 'react-router-dom';
-
+import Footer from './Footer';
 const SearchResultsPage = () => {
   const location = useLocation();
   const basicData = location.state.data;
@@ -54,6 +54,7 @@ const SearchResultsPage = () => {
         {dataArray &&
           dataArray.map((item, index) => <Card key={index} item={item} />)}
       </div>
+      <Footer />
     </div>
   );
 };

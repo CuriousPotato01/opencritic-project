@@ -8,7 +8,7 @@ const ReviewCard = ({ item }) => {
           <img src={'https://img.opencritic.com/' + item.Outlet.imageSrc.sm} />
         </div>
         <div className="card-body overflow-auto">
-          <p className="card-text">{item.snippet}</p>
+          <p className="">{item.snippet}</p>
         </div>
       </div>
     </div>

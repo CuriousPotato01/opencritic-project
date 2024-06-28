@@ -19,11 +19,13 @@ const Card = ({ item }) => {
           </div>
 
           <div className="card-body">
-            <h2 className="card-title">{item.name}</h2>
+            <h2 className="card-title border-bottom border-secondary">
+              {item.name}
+            </h2>
             <p className="card-text">
               Critic Average: {Math.round(item.topCriticScore)}
             </p>
-            <p className="card-text">Release Date: {formattedDate}</p>
+            <p className="card-text ">Release Date: {formattedDate}</p>
           </div>
         </div>
       </Link>

@@ -45,3 +45,11 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.card-text {
+  color: rgba(255, 255, 255, 0.694);
+}
+
+.details-container {
+  height: 626px;
+}

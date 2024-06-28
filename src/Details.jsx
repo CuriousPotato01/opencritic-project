@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import fetchData from './fetchData';
 import ReviewCard from './ReviewCard';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 const Details = () => {
   const { id } = useParams();
@@ -52,20 +53,34 @@ const Details = () => {
   const formattedDate = date.toLocaleDateString('en-US', dateOptions);
 
   return (
-    <div>
+    <div className="vh-100">
       <Navbar />
-      <div className="d-flex flex-row">
+      <div className="d-flex flex-row details-container ps-3 pe-3 ">
         <div>
           <img
             src={'https://img.opencritic.com/' + data.images?.masthead?.xl}
             alt={data.name}
           />
         </div>
-        <div className="w-100 bg-secondary ms-2">
+        <div className="border ms-2 pt-2  d-flex flex-column">
           <p className="text-center fw-bold">{data.name}</p>
-          <p>Release Date: {formattedDate}</p>
-          <p>Developer: {data.Companies[0].name}</p>
-          <p>Critic Average: {Math.round(data.topCriticScore)}</p>
+          <div className="ps-2 pe-2 border-bottom">
+            <ul>
+              <li>
+                <p>Release Date: {formattedDate}</p>
+              </li>
+              <li>
+                <p>Developer: {data.Companies[0].name}</p>
+              </li>
+              <li>
+                <p>Critic Average: {Math.round(data.topCriticScore)}</p>
+              </li>
+            </ul>
+          </div>
+
+          <div className="pt-2 ps-3 pe-3 overflow-auto description-container">
+            <p className="">{data.description}</p>
+          </div>
         </div>
       </div>
 
@@ -141,11 +156,12 @@ const Details = () => {
         </button>
       </div> */}
 
-      <div className="row mt-5">
+      <div className="row mt-5 ms-3 me-3 mb-3">
         {reviewData.slice(0, 5).map((item, index) => (
           <ReviewCard key={index} item={item} />
         ))}
       </div>
+      <Footer />
     </div>
   );
 };
