@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
+import logoLight from './images/logo-light.png';
+import gitLogo from './images/github-mark-white.png';
 
 function Navbar() {
   return (
@@ -9,7 +11,7 @@ function Navbar() {
     >
       <div className="container-fluid">
         <Link to="/opencritic-project">
-          <img src="/opencritic-project/src/logo-light.png" alt="" />
+          <img src={logoLight} alt="" />
         </Link>
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav">
@@ -23,7 +25,7 @@ function Navbar() {
           to={'https://github.com/CuriousPotato01/opencritic-project'}
         >
           <img
-            src="/opencritic-project/src/github-mark-white.png"
+            src={gitLogo}
             style={{ width: '40px', height: '40px', objectFit: 'contain' }}
           />
         </Link>
