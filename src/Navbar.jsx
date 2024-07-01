@@ -8,8 +8,8 @@ function Navbar() {
       data-bs-theme="dark"
     >
       <div className="container-fluid">
-        <Link to="/">
-          <img src="/src/logo-light.png" alt="" />
+        <Link to="/opencritic-project">
+          <img src="/opencritic-project/src/logo-light.png" alt="" />
         </Link>
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav">
@@ -23,7 +23,7 @@ function Navbar() {
           to={'https://github.com/CuriousPotato01/opencritic-project'}
         >
           <img
-            src="/src/github-mark-white.png"
+            src="/opencritic-project/src/github-mark-white.png"
             style={{ width: '40px', height: '40px', objectFit: 'contain' }}
           />
         </Link>

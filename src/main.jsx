@@ -9,23 +9,23 @@ import SearchResultsPage from './SearchResultsPage';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/opencritic-project',
     element: <HomePage />,
   },
   {
-    path: '/score/:pageNumber',
+    path: '/opencritic-project/score/:pageNumber',
     element: <HomePage />,
   },
   {
-    path: '/date/:pageNumber',
+    path: '/opencritic-project/date/:pageNumber',
     element: <HomePage />,
   },
   {
-    path: '/details/:id',
+    path: '/opencritic-project/details/:id',
     element: <Details />,
   },
   {
-    path: '/search/',
+    path: '/opencritic-project/search/',
     element: <SearchResultsPage />,
   },
 ]);

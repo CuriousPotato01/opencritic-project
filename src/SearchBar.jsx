@@ -26,7 +26,7 @@ function SearchBar() {
         e.preventDefault();
         let data = await fetchData(options);
         console.log(data);
-        navigate('/search', { state: { data } });
+        navigate('/opencritic-project/search', { state: { data } });
       }}
       className="d-flex position-absolute top-50 start-50 translate-middle"
       role="search"

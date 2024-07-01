@@ -21,7 +21,7 @@ function SortingMenu({ propFunction }) {
       <ul className="dropdown-menu">
         <li>
           <Link
-            to="/score/1"
+            to="/opencritic-project/score/1"
             className="dropdown-item"
             onClick={() => handleClick('score')}
           >
@@ -31,7 +31,7 @@ function SortingMenu({ propFunction }) {
 
         <li>
           <Link
-            to="/date/1"
+            to="/opencritic-project/date/1"
             className="dropdown-item"
             onClick={() => handleClick('date')}
           >

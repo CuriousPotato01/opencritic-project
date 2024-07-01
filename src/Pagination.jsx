@@ -5,7 +5,10 @@ import { useState, useEffect } from 'react';
 function Pagination({ sort, propFunction }) {
   const [pageArray, setPageArray] = useState([1, 2, 3, 4, 5]);
   const [activePage, setActivePage] = useState(1);
-  const baseUrl = sort === 'date' ? '/date/' : '/score/';
+  const baseUrl =
+    sort === 'date'
+      ? '/opencritic-project/date/'
+      : '/opencritic-project/score/';
 
   function handleClick(pageNumber) {
     propFunction(pageNumber, sort);
